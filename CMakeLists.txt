@@ -16,12 +16,7 @@ file(
 )
 
 add_library(
-    ${This} 
-    SHARED 
-    Owl.h
-    Owl.cpp
-    ${Headers} 
-    ${Sources}
+    ${This} SHARED ${Headers} ${Sources}
 )
 
 
