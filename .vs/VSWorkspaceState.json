@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\include",
+    "\\include\\Owl",
+    "\\src",
+    "\\test",
+    "\\test\\src"
+  ],
+  "SelectedNode": "\\include\\Owl\\Owl.hpp",
+  "PreviewInSolutionExplorer": false
+}
