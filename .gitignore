@@ -1,5 +1,7 @@
 # Project speecific ones
 build/
+.vs/
+.vscode/
 
 # User-specific files
 *.rsuser

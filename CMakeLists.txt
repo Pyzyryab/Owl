@@ -10,7 +10,6 @@ project(
 
 set(CMAKE_CXX_STANDARD 17) # This project will be build using the C++ 17 standard
 set(CMAKE_CXX_EXTENSIONS OFF) # Let's ensure -std=c++xx instead of -std=g++xx
-set(CMAKE_BUILD_TYPE Debug) # TODO Correctly set this one
 
 # Directories for headers and source code
 file(
@@ -24,6 +23,9 @@ file(
 # Add source to this project's executable.
 add_library (${This} STATIC ${Headers} ${Sources})
 target_include_directories(${This} PUBLIC "include")
+
+# Target properties
+SET_TARGET_PROPERTIES(${This} PROPERTIES CMAKE_BUILD_TYPE Debug)
 
 # Compiler options to enable the inclusion of reflection capabilities into C++
 # thanks to the .NET System library of the Microsoft's COMMON LANGUAGE RUNTIME SUPPORT

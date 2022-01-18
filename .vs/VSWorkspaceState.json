@@ -1,12 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\build",
     "\\include",
     "\\include\\Owl",
     "\\src",
     "\\test",
     "\\test\\src"
   ],
-  "SelectedNode": "\\test\\CMakeLists.txt",
+  "SelectedNode": "\\build\\Owl.sln",
   "PreviewInSolutionExplorer": false
 }

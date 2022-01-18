@@ -3,8 +3,20 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
+
 namespace HelloOwlTest
 {
+
+    TEST_MODULE_INITIALIZE(ModuleInitialize)
+    {
+        Logger::WriteMessage("In Module Initialize");
+    }
+
+    TEST_MODULE_CLEANUP(ModuleCleanup)
+    {
+        Logger::WriteMessage("In Module Cleanup");
+    }
+
     TEST_CLASS(Test1) {
         public:
             TEST_METHOD(IsPowerOfTwo)

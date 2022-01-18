@@ -7,6 +7,13 @@
       "name": "Owl.cpp",
       "project": "Owl.cpp",
       "projectTarget": ""
+    },
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "CMakeLists.txt",
+      "projectTarget": "OwlTests.dll (test\\Debug\\OwlTests.dll)",
+      "name": "OwlTests.dll (test\\Debug\\OwlTests.dll)"
     }
   ]
 }
