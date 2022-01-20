@@ -2,11 +2,12 @@
 cmake_minimum_required (VERSION 3.8)
 
 set(This Owl) # Creates a variable to reference the project's name
-project(
+project( # Sets the properties of the project
     ${This}
     VERSION 0.1.0
     LANGUAGES CXX
-) # Sets the properties of the project
+) 
+list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 set(CMAKE_CXX_STANDARD 17) # This project will be build using the C++ 17 standard
 set(CMAKE_CXX_EXTENSIONS OFF) # Let's ensure -std=c++xx instead of -std=g++xx
