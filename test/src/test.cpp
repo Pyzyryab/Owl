@@ -1,4 +1,7 @@
-#include "../../include/Owl/Owl.hpp"
+#pragma once
+
+
+// #include <Owl/Owl.hpp>
 #include <CppUnitTest.h>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -6,6 +9,9 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace HelloOwlTest
 {
+    BEGIN_TEST_MODULE_ATTRIBUTE()
+        TEST_MODULE_ATTRIBUTE(L"Date", L"2010/6/12")
+    END_TEST_MODULE_ATTRIBUTE()
 
     TEST_MODULE_INITIALIZE(ModuleInitialize)
     {
@@ -17,20 +23,40 @@ namespace HelloOwlTest
         Logger::WriteMessage("In Module Cleanup");
     }
 
-    TEST_CLASS(Test1) {
-        public:
-            TEST_METHOD(IsPowerOfTwo)
-            {
-                Assert::IsTrue(is_power_of_two(8));
-            }
+    TEST_CLASS(Class1)
+    {
 
-            TEST_METHOD(MultiplyByTwo)
-            {
-                Assert::AreEqual(14, multiply_by_two(7));
-            }
+    public:
 
-            TEST_METHOD(DivideByTwo)    {
-                Assert::AreEqual(-4, divide_by_two(-7));
-            }
+        Class1()
+        {
+            Logger::WriteMessage("In Class1");
+        }
+
+        ~Class1()
+        {
+            Logger::WriteMessage("In ~Class1");
+        }
+
+        TEST_CLASS_INITIALIZE(ClassInitialize)
+        {
+            Logger::WriteMessage("In Class Initialize");
+        }
+
+        TEST_CLASS_CLEANUP(ClassCleanup)
+        {
+            Logger::WriteMessage("In Class Cleanup");
+        }
+
+        TEST_METHOD(Method1)
+        {
+            Logger::WriteMessage("In Method1");
+            Assert::AreEqual(0, 1);
+        }
+
+        TEST_METHOD(Method2)
+        {
+            Assert::Fail(L"Fail");
+        }
     };
 }

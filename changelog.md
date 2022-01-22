@@ -6,7 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.2] - 2022-01-15
+## [0.1.3] - 2022-01-22
+### Added
+- Due to the issues integrating managed code (Msil lang from Microsoft) with `googletest` or `CppUnitTestFramework`, a new
+`CMake` module [test_manual] it's created in order to "manually testing" (classical object instantiations,
+method calls and console outputs...) the implemented features and make it available to any user or developer.
+
+### Removed
+- The mock functions on the core file of the project that are no content related with it.
+
+## [0.1.2] - 2022-01-18
 ### Added
 - The `changelog.md` of the project starts in this version, but it will contains retroactive info from the first versions.
 - The `README.md` of the project it's created and started in this version.
@@ -16,12 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The `test` project, that will contains the tests for the code of the project, now it's configured as a `SHARED` library in order to make
 the whole project compile.
 
-### Fixed
-- No fixes.
-
-### Removed
-- No content removed.
-
 
 ## [0.1.1] - 2022-01-15
 ### Added
@@ -30,12 +33,6 @@ The intention it's to publish the testing results and the code coverage on the G
 
 ### Changed
 - `src` folder now contains it's own `CMake` script to build the source code of the library.
-
-### Fixed
-- No fixes.
-
-### Removed
-- No content removed.
 
 
 ## [0.1.0] - 2022-01-15
