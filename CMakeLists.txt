@@ -4,7 +4,7 @@ cmake_minimum_required (VERSION 3.8)
 set(This Owl) # Creates a variable to reference the project's name
 project( # Sets the properties of the project
     ${This}
-    VERSION 0.1.0
+    VERSION 0.1.3
     LANGUAGES CXX
 ) 
 list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
@@ -22,7 +22,7 @@ file(
 )
 
 # Add source to this project's executable.
-add_library (${This} STATIC ${Headers} ${Sources})
+add_library (${This} SHARED ${Headers} ${Sources})
 target_include_directories(${This} PUBLIC "include")
 
 # Target properties
@@ -30,15 +30,14 @@ SET_TARGET_PROPERTIES(${This} PROPERTIES CMAKE_BUILD_TYPE Debug)
 
 # Compiler options to enable the inclusion of reflection capabilities into C++
 # thanks to the .NET System library of the Microsoft's COMMON LANGUAGE RUNTIME SUPPORT
-SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMMON_LANGUAGE_RUNTIME "")#
-SET_TARGET_PROPERTIES(${This} PROPERTIES COMPILE_FLAGS "/clr")
-STRING(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
-STRING(REPLACE "/RTC1" "" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /clr")  
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /c")
+# SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES COMMON_LANGUAGE_RUNTIME "")#
+# SET_TARGET_PROPERTIES(${This} PROPERTIES COMPILE_FLAGS "/clr")
+# STRING(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+# STRING(REPLACE "/RTC1" "" CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
+# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /clr")  
+# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /c")
 
 
 # TODO: Add tests and install targets if needed.
-include(CTest)
 enable_testing()
 add_subdirectory(test)

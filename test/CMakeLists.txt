@@ -11,7 +11,7 @@ file(
             src/**.cpp
 )
 
-add_library(${This} SHARED ${Sources})
+add_library(${This} ${Sources})
 target_compile_features(${This} PRIVATE cxx_std_17)
 
 find_package(MSUnitTestFramework REQUIRED)
@@ -28,5 +28,5 @@ target_link_libraries(
     PRIVATE MSUnitTestFramework::MSUnitTestFramework 
     Owl
 )
-add_test(NAME ${This} COMMAND "${VSTest_EXECUTABLE}" "$<TARGET_FILE:OwlTests>")
+add_test(NAME ${This} COMMAND "${VSTest_EXECUTABLE}" "$<TARGET_FILE:${This}>" /EnableCodeCoverage)
 
