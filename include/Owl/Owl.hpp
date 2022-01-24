@@ -14,3 +14,7 @@
 #pragma once
 
 #include <iostream>
+
+namespace Owl {
+    // TODO Pending impl
+}

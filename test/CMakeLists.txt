@@ -11,22 +11,21 @@ file(
             src/**.cpp
 )
 
-add_library(${This} ${Sources})
+# find_library(Owl "../build/Debug")
+
+add_executable(${This} ${Sources})
 target_compile_features(${This} PRIVATE cxx_std_17)
 
-find_package(MSUnitTestFramework REQUIRED)
-find_program(
-    VSTest_EXECUTABLE 
-    NAMES vstest.console.exe 
-    PATHS "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow"
-    REQUIRED
-)
-
+# add_executable(prueba "src/test.cpp")
 
 target_link_libraries(
-    ${This}
-    PRIVATE MSUnitTestFramework::MSUnitTestFramework 
-    Owl
+    ${This} 
+    PRIVATE Owl
 )
-add_test(NAME ${This} COMMAND "${VSTest_EXECUTABLE}" "$<TARGET_FILE:${This}>" /EnableCodeCoverage)
 
+# Run tests after build
+# add_custom_command(
+#     OUTPUT test_cmake.exe
+#     COMMENT "Running tests for the Owl Framework Project"
+#     COMMAND ${This} 
+# )

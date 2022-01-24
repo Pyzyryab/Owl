@@ -1,7 +1,7 @@
 ﻿// CMakeProject1.cpp: define el punto de entrada de la aplicación.
 //
 
-#include "CMakeProject1.h"
+// #include "CMakeProject1.h"
 
 using namespace std;
 
@@ -10,7 +10,6 @@ using namespace System::Reflection;
 
 public enum class Access { Read, Write, Execute };
 public enum class HttpMethod { GET, POST, PUT, DELETE, DEFAULT };
-public enum class Http++Cosa{ asdf, asdfsd, asdfds };
 
 // Defining the Job attribute:
 [AttributeUsage( AttributeTargets::Class, AllowMultiple=true )]

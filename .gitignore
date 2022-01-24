@@ -2,6 +2,7 @@
 build/
 .vs/
 .vscode/
+# test_cppUnitTestFramework/
 
 # User-specific files
 *.rsuser
